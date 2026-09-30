@@ -21,7 +21,7 @@ paginate = 6
   dateFormat = "2 January 2006"
 
   [params.logo]
-    logoText = "mmeik"
+    logoText = "meike"
 
 [taxonomies]
   tag = "tags"
