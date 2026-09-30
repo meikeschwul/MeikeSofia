@@ -1,0 +1,65 @@
+baseURL = "https://GEBRUIKERSNAAM.github.io/REPOSITORYNAAM/"
+locale = "nl-NL"
+defaultContentLanguage = "nl"
+title = "Mijn roze terminal"
+theme = "terminal"
+enableRobotsTXT = true
+enableGitInfo = false
+paginate = 6
+
+[params]
+  contentTypeName = "posts"
+  showMenuItems = 5
+  fullWidthTheme = false
+  centerTheme = false
+  autoCover = false
+  subtitle = "Persoonlijke notities over maken, leren en leven."
+  keywords = "persoonlijke blog, notities, Hugo"
+  menuMore = "Meer"
+  readMore = "Lees verder"
+  readOtherPosts = "Lees andere berichten"
+  dateFormat = "2 January 2006"
+
+  [params.logo]
+    logoText = "mijn@roze-terminal:~$"
+
+[taxonomies]
+  tag = "tags"
+
+[permalinks]
+  posts = "/blog/:year/:month/:slug/"
+
+[outputs]
+  home = ["HTML", "RSS", "Sitemap"]
+  section = ["HTML", "RSS"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false
+
+[menu]
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 1
+  [[menu.main]]
+    identifier = "archief"
+    name = "Archief"
+    url = "/archief/"
+    weight = 2
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 3
+  [[menu.main]]
+    identifier = "over-mij"
+    name = "Over mij"
+    url = "/over-mij/"
+    weight = 4
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5

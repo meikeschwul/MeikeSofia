@@ -1,0 +1,21 @@
+# Hugo build output
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# Local personal documentation: never commit this file
+HANDLEIDING.md
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
