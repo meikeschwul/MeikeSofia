@@ -1,8 +1,7 @@
 ---
 title: "Welkom"
-description: "Een persoonlijke, Nederlandstalige blog in terminalstijl."
 ---
 
-> `welkom@roze-terminal:~$` Een plek voor kleine observaties, ideeën en dingen die ik onderweg leer.
+> `welkom@meike:~$` Een plek voor dingen die ik graag wil vertellen
 
-Hier staan de meest recente berichten. Kies **Blog** voor alles, of blader door het **Archief**.
+Hier staan de meest recente berichten. Kies **Blog** voor alles.

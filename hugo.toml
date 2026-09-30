@@ -1,7 +1,7 @@
 baseURL = "https://meikesofia.nl/"
 locale = "nl-NL"
 defaultContentLanguage = "nl"
-title = "Mijn roze terminal"
+title = "Meike"
 theme = "terminal"
 enableRobotsTXT = true
 enableGitInfo = false
@@ -11,17 +11,17 @@ paginate = 6
   contentTypeName = "posts"
   showMenuItems = 5
   fullWidthTheme = false
-  centerTheme = false
+  centerTheme = true
   autoCover = false
-  subtitle = "Persoonlijke notities over maken, leren en leven."
-  keywords = "persoonlijke blog, notities, Hugo"
+  subtitle = ""
+  keywords = ""
   menuMore = "Meer"
   readMore = "Lees verder"
   readOtherPosts = "Lees andere berichten"
   dateFormat = "2 January 2006"
 
   [params.logo]
-    logoText = "mijn@roze-terminal:~$"
+    logoText = "meike"
 
 [taxonomies]
   tag = "tags"
@@ -42,7 +42,7 @@ paginate = 6
   [[menu.main]]
     identifier = "blog"
     name = "Blog"
-    url = "/blog/"
+    url = "/posts/"
     weight = 1
   [[menu.main]]
     identifier = "archief"
@@ -54,11 +54,6 @@ paginate = 6
     name = "Tags"
     url = "/tags/"
     weight = 3
-  [[menu.main]]
-    identifier = "over-mij"
-    name = "Over mij"
-    url = "/over-mij/"
-    weight = 4
 
 [sitemap]
   changefreq = "weekly"
