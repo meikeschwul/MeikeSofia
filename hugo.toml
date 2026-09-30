@@ -21,7 +21,7 @@ paginate = 6
   dateFormat = "2 January 2006"
 
   [params.logo]
-    logoText = "meike"
+    logoText = "mmeik"
 
 [taxonomies]
   tag = "tags"
@@ -45,9 +45,9 @@ paginate = 6
     url = "/posts/"
     weight = 1
   [[menu.main]]
-    identifier = "archief"
-    name = "Archief"
-    url = "/archief/"
+    identifier = "over-mij"
+    name = "Over mij"
+    url = "/over-mij/"
     weight = 2
   [[menu.main]]
     identifier = "tags"
