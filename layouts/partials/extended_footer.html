@@ -1,0 +1,33 @@
+<script>
+(() => {
+  const control = document.querySelector(".theme-control");
+  const choice = document.getElementById("theme-choice");
+  if (!control || !choice) return;
+  const root = document.documentElement;
+  const system = window.matchMedia("(prefers-color-scheme: light)");
+  function updateBrowserColor() {
+    const light = root.dataset.theme === "light" || (!root.dataset.theme && system.matches);
+    document.querySelectorAll('meta[name="theme-color"]').forEach(meta => {
+      meta.removeAttribute("media");
+      meta.content = light ? "#fff7fb" : "#20151d";
+    });
+  }
+  function apply(theme) {
+    if (theme === "system") delete root.dataset.theme;
+    else root.dataset.theme = theme;
+    choice.value = theme;
+    updateBrowserColor();
+  }
+  apply(root.dataset.theme || "system");
+  control.hidden = false;
+  choice.addEventListener("change", () => {
+    apply(choice.value);
+    try { localStorage.setItem("meike-theme", choice.value); } catch (_) {}
+  });
+  system.addEventListener("change", updateBrowserColor);
+  window.addEventListener("storage", event => {
+    if (event.key !== "meike-theme" && event.key !== null) return;
+    apply(event.newValue === "light" || event.newValue === "dark" ? event.newValue : "system");
+  });
+})();
+</script>

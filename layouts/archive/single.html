@@ -8,7 +8,7 @@
         <h2 id="jaar-{{ .Key }}">{{ .Key }}</h2>
         <ul>
           {{ range .Pages }}
-            <li><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 januari" }}</time> — <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            <li><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format "2 January" }}</time> — <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
           {{ end }}
         </ul>
       </section>

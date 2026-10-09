@@ -13,7 +13,7 @@ paginate = 6
   fullWidthTheme = false
   centerTheme = true
   autoCover = false
-  subtitle = ""
+  subtitle = "Het persoonlijke blog van Meike: een roze terminal voor verhalen, gedachten en dingen die ik wil delen."
   keywords = ""
   menuMore = "Meer"
   readMore = "Lees verder"
@@ -54,6 +54,12 @@ paginate = 6
     name = "Tags"
     url = "/tags/"
     weight = 3
+
+[[menu.main]]
+  identifier = "archief"
+  name = "Archief"
+  url = "/archief/"
+  weight = 4
 
 [sitemap]
   changefreq = "weekly"
