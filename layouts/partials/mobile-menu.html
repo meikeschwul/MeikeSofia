@@ -1,10 +1,15 @@
 <ul class="menu menu--mobile">
-  <li><button type="button" class="menu__trigger" aria-expanded="false" aria-controls="mobiel-menu">Menu&nbsp;▾</button></li>
+  <li><button type="button" class="menu__trigger" aria-expanded="false" aria-controls="mobile-menu-links">Menu <span aria-hidden="true">▾</span></button></li>
   <li>
-    <ul class="menu__dropdown" id="mobiel-menu">
+    <ul class="menu__dropdown" id="mobile-menu-links">
       {{ range $.Site.Menus.main }}
         {{ if not .HasChildren }}
           <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      {{ end }}
+      {{ if and $.Site.Params.showLanguageSelector (len $.Site.Home.AllTranslations) }}
+        {{ range $.Site.Home.AllTranslations }}
+          <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
         {{ end }}
       {{ end }}
     </ul>

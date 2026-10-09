@@ -5,41 +5,221 @@
   --accent: #ffb6d0;
   --code: #ffd5e4;
   --code-border: #a85978;
+  --link: #ffd1e1;
+  --link-hover: #ffffff;
+  --focus: #ffffff;
+  --decoration: #ffb6d0;
+  --logo-background: #ffb6d0;
+  --logo-foreground: #20151d;
+  --selection-background: #ffb6d0;
+  --selection-foreground: #20151d;
+  --muted: #d5b6c6;
+  --comment: #d5b6c6;
+  --second-tone: #ffd5e4;
+  color-scheme: dark;
   --radius: 3px;
   --font-size: 1rem;
   --line-height: 1.72;
 }
 
-::selection { background: #ffb6d0; color: #20151d; }
+::selection {
+  background: var(--selection-background);
+  color: var(--selection-foreground);
+}
 
 a {
-  color: #ffd1e1;
+  color: var(--link);
   text-decoration: underline;
   text-decoration-thickness: 0.12em;
   text-underline-offset: 0.18em;
 }
 
-a:hover { color: #ffffff; text-decoration-thickness: 0.2em; }
+a:hover {
+  color: var(--link-hover);
+  text-decoration-thickness: 0.2em;
+}
 
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-  outline: 3px solid #ffffff;
+  outline: 3px solid var(--focus);
   outline-offset: 4px;
   border-radius: 2px;
 }
 
-.post-title a, .logo__mark, .logo__text { text-decoration: none; }
-.post-title a:hover, .logo__text:hover { text-decoration: underline; }
+.post-title a,
+.logo__mark,
+.logo__text {
+  text-decoration: none;
+}
 
-.index-content, .post { border-color: #ffb6d0; }
-.post-content { max-width: 76ch; }
-.post-content p, .post-content li { color: #fff7fb; }
+.post-title a:hover,
+.logo__text:hover {
+  text-decoration: underline;
+}
 
-img { height: auto; max-width: 100%; }
+.index-content,
+.post {
+  border-color: var(--decoration);
+}
+
+.post-content {
+  max-width: 76ch;
+}
+
+.post-content p,
+.post-content li {
+  color: var(--foreground);
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Native menu button, matching the Terminal navigation. */
+.menu--mobile button.menu__trigger {
+  background: var(--background);
+  font: inherit;
+  line-height: inherit;
+  border-radius: var(--radius);
+}
+.menu--mobile > li:first-child {
+  margin-bottom: 0;
+}
+
+/* Follow the operating system, including changes while the page is open. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --background: #fff7fb;
+    --foreground: #20151d;
+    --accent: #9b365e;
+    --link: #963457;
+    --link-hover: #6e2342;
+    --focus: #963457;
+    --code: #6e2342;
+    --code-border: #a85978;
+    --muted: #705364;
+    --comment: #705364;
+    --second-tone: #963457;
+  }
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
+    --background: #fff7fb;
+    --foreground: #20151d;
+    --accent: #9b365e;
+    --link: #963457;
+    --link-hover: #6e2342;
+    --focus: #963457;
+    --code: #6e2342;
+    --code-border: #a85978;
+    --muted: #705364;
+    --comment: #705364;
+    --second-tone: #963457;
+  }
+
+/* Keep the original pastel pink for decoration and the logo. */
+.header__logo::after {
+  background: repeating-linear-gradient(90deg, var(--decoration), var(--decoration) 2px, transparent 0, transparent 10px);
+}
+.logo,
+.logo:hover {
+  background: var(--logo-background);
+  color: var(--logo-foreground);
+}
+.post-title,
+.post-title::after {
+  border-bottom-color: var(--decoration);
+}
+blockquote {
+  border-color: var(--decoration);
+}
+.post-meta {
+  color: var(--muted);
+}
+.footer {
+  opacity: 1;
+  color: var(--muted);
+}
+
+.menu--mobile .menu__dropdown {
+  min-width: max-content;
+}
+.menu--mobile .menu__dropdown a {
+  white-space: nowrap;
+}
+
+.theme-control {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+.theme-control label { margin: 0; }
+.theme-control select {
+  width: auto;
+  padding: 6px 32px 6px 10px;
+  border-color: var(--accent);
+  background-color: var(--background);
+}
+.theme-control select:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+.theme-control[hidden] { display: none; }
+
+.header__navigation {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  margin: 20px 1px;
+}
+.header__navigation .navigation-menu {
+  flex: 1;
+  margin: 0;
+}
+.header__navigation .navigation-menu__inner {
+  align-items: center;
+  gap: 10px 20px;
+}
+.header__navigation .navigation-menu__inner > li {
+  margin: 0;
+}
+.header__navigation > .menu--mobile {
+  display: none;
+}
+@media (max-width: 684px) {
+  .header__navigation .navigation-menu {
+    display: none;
+  }
+  .header__navigation > .menu--mobile {
+    display: flex;
+    margin-right: auto;
+  }
+  .header__navigation .menu--mobile .menu__trigger {
+    margin-left: 0;
+  }
+  .header__navigation {
+    gap: 12px;
+  }
 }
 
 /* Mobile menu trigger is a real <button> (layouts/partials/mobile-menu.html). */

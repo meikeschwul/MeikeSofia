@@ -1,1 +1,12 @@
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#20151d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fff7fb" media="(prefers-color-scheme: light)">
 <link rel="icon" href="{{ "favicon.svg" | absURL }}" type="image/svg+xml">
+<noscript><style>.menu--mobile .menu__dropdown { display: flex; position: static; box-shadow: none; } .menu--mobile .menu__trigger { display: none; }</style></noscript>
+<script>
+(() => {
+  let theme = "system";
+  try { theme = localStorage.getItem("meike-theme") || "system"; } catch (_) {}
+  if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+})();
+</script>

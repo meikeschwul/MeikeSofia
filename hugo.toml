@@ -13,6 +13,7 @@ enableGitInfo = false
   centerTheme = true
   autoCover = false
   subtitle = "De persoonlijke blog van Meike: een roze terminal vol dingen die ik graag wil vertellen."
+  keywords = ""
   menuMore = "Meer"
   readMore = "Lees verder"
   readOtherPosts = "Lees andere berichten"
@@ -57,3 +58,13 @@ enableGitInfo = false
     name = "Tags"
     url = "/tags/"
     weight = 3
+
+[[menu.main]]
+  identifier = "archief"
+  name = "Archief"
+  url = "/archief/"
+  weight = 4
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
