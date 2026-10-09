@@ -3,6 +3,7 @@ title: "Hallo"
 date: 2026-09-30
 description: "Een eerste kennismaking met mijn persoonlijke blog en de roze terminal waarin mijn verhalen een plek krijgen."
 tags: [website]
+draft: true
 ---
 
 Welkom op mijn blog. Dit eerste bericht markeert het begin van mijn eigen plek op het web: een roze terminal voor dingen die ik graag wil vertellen.

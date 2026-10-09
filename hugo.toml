@@ -5,7 +5,6 @@ title = "Meike"
 theme = "terminal"
 enableRobotsTXT = true
 enableGitInfo = false
-paginate = 6
 
 [params]
   contentTypeName = "posts"
@@ -13,15 +12,20 @@ paginate = 6
   fullWidthTheme = false
   centerTheme = true
   autoCover = false
-  subtitle = "Het persoonlijke blog van Meike: een roze terminal voor verhalen, gedachten en dingen die ik wil delen."
+  subtitle = "De persoonlijke blog van Meike: een roze terminal vol dingen die ik graag wil vertellen."
   keywords = ""
   menuMore = "Meer"
   readMore = "Lees verder"
   readOtherPosts = "Lees andere berichten"
   dateFormat = "2 January 2006"
+  missingContentMessage = "Pagina niet gevonden"
+  missingBackButtonLabel = "Terug naar de homepage"
 
   [params.logo]
     logoText = "meike"
+
+[pagination]
+  pagerSize = 6
 
 [taxonomies]
   tag = "tags"
@@ -30,7 +34,7 @@ paginate = 6
   posts = "/blog/:year/:month/:slug/"
 
 [outputs]
-  home = ["HTML", "RSS", "Sitemap"]
+  home = ["HTML", "RSS"]
   section = ["HTML", "RSS"]
 
 [markup]

@@ -1,0 +1,18 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="copyright">
+      <span>© {{ now.Year }} Meike · Gemaakt met <a href="https://gohugo.io">Hugo</a></span>
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal">Thema</a> door <a href="https://github.com/panr">panr</a></span>
+    </div>
+  </div>
+</footer>
+
+{{ $menu := resources.Get "js/menu.js" | js.Build }}
+{{ $cp := resources.Get "js/code.js" | js.Build }}
+
+{{ $bundle := slice $menu $cp | resources.Concat "bundle.js" | resources.Minify }}
+
+<script src="{{ $bundle.RelPermalink }}"></script>
+
+<!-- Extended footer section-->
+{{ partial "extended_footer.html" . }}

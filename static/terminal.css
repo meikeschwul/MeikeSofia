@@ -221,3 +221,11 @@ blockquote {
     gap: 12px;
   }
 }
+
+/* Mobile menu trigger is a real <button> (layouts/partials/mobile-menu.html). */
+button.menu__trigger {
+  background: none;
+  border-radius: 0;
+  font: inherit;
+  line-height: inherit;
+}
